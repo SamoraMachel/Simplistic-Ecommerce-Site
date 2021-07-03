@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfroshopKE </title>
+    
+</head>
+<body>
+
+    <section>
+        <div class="circle"></div>
+        <header>
+        
+            <a href="#"></a><img src="{% static '/images/logo.png' %}" class="logo"></a>
+            <ul>
+                <li><a href="{% url 'jambo' %}">What's up!</a></li>
+                <li><a href="{% url 'about' %}">About us</a></li>
+                <li><a href="{% url 'contact' %}">Contact us</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Leta luku, Piga luku<br>It's <span>AfroshopKE</span></h2>
+                <p> Jambo!
+                Brace yourself for you have arrived at the ideal shopping hub for all your
+                authentic African merchandise. Luku ni safi, piga luku na sisi.</p>
+                <a href="/admin">Admin Login</a>
+                <a href="{% url 'user' %}">User Login</a>
+            </div>
+            <div class="imgBox">
+             <img src="{% static 'images/R1.png' %}" class="starbucks">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="{% static 'images/thumb1.png' %}"></li>
+            <li><img src="{% static 'images/thumb2.png' %}"></li>
+            <li><img src="{% static 'images/thumb3.png' %}"></li>
+        </ul>
+    </section>
+</body>
+</html>

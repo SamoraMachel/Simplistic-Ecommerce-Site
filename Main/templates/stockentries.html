@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+   <title>Stock</title>
+   <h1> Record for Stocks</h1>
+    {% for item in values %}
+        <p>ID: {{item.id}}, code: {{item.code}}, name: {{item.name}}, quantity: {{item.quantity}},  amount:Ksh. {{item.price}}</p>
+    {% endfor %}
+{% endblock %}

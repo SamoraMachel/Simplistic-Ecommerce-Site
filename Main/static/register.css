@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #000;
+}
+.background {
+  background: url(images/WhatsApp\ Image\ 2021-05-18\ at\ 17.18.19.jpeg)
+    no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+}
+.text,
+.box {
+  margin-top: 5vh;
+  flex: 1;
+}
+.text {
+  margin-left: 2%;
+  font-weight: 1000;
+}
+.login {
+  margin-bottom: 25%;
+  font-weight: 300px;
+}
+.box {
+  margin-left: -55%;
+  margin-top: 8vh;
+}
+.text h1 {
+  font-size: 70px;
+  color: rgb(209, 181, 20);
+  font-weight: 1000;
+}
+.text p {
+  font-size: 20px;
+  color: rgb(209, 181, 20);
+  font-weight: 1000;
+}
+.text p a {
+  color: rgb(209, 181, 20);
+  font-weight: 1000;
+}
+.form {
+  background: transparent;
+  color: rgb(3, 3, 3);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+}
+input {
+  margin: 5px 0;
+  padding: 10px;
+  border: 5px;
+  outline: none;
+  color: rgb(3, 3, 3);
+}
+.username,
+.password,
+.Fullname,
+.email {
+  border-bottom: 0px solid rgb(7, 7, 7);
+}
+.button {
+  border: 1px solid rgb(209, 181, 20);
+  color: black;
+  font-size: 18px;
+}
+.button:hover {
+  background: #fff;
+  color: rgb(209, 181, 20);
+}

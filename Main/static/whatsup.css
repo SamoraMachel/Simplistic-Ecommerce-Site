@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: snow;
+}
+.JAMBO {
+  background: url(images/whatsup.png) no-repeat left;
+  background-size: 50%;
+  background-color: white khaki;
+  overflow: hidden;
+  padding: 100px 0;
+}
+.section1 {
+  width: 60%;
+  float: right;
+  background-color: rgb(107, 192, 192);
+  padding: 200px;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+}
+.section1 h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+.section1 li a {
+  display: inline-block;
+  background-color: black;
+  color: #fff;
+  padding: 6px 6px;
+  border-radius: 20px;
+  font-weight: 400;
+  margin-left: 40px;
+  text-decoration: none;
+}
+.message {
+  font-size: 15px;
+  color: black;
+  line-height: 25px;
+  text-align: justify;
+  margin-bottom: 40px;
+  font-weight: 500;
+}

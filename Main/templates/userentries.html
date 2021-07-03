@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+   <title>User Record</title>
+   <h1> Userlogin Record</h1>
+   <br><br>
+    {% for item in values %}
+        <p>Username: {{item.username}}, Phone Number: {{item.phone}}, Email:{{item.email}}, created:{{item.created}}</p>
+    {% endfor %}
+{% endblock %}

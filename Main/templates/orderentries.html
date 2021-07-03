@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+   <title>Orders Record</title>
+   <h1> Customer Orders Record </h1>
+   <br><br>
+    {% for item in values %}
+        <p>Username: {{item.username}}, Phone Number: {{item.phone}}, Email:{{item.email}}</p>
+    {% endfor %}
+{% endblock %}

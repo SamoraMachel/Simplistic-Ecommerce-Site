@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='userpage.css')}}">
+    <title>User Page</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="{{ url_for('sales') }}">Purchase</a></li>
+            <li><a href="{{ url_for('orders') }}">Make Order</a></li> 
+            <li><a href="{{ url_for('home') }}">Logout </a></li> 
+            <li><a href="#">{{ username }}</a></li>
+            <li><a href="#">{{ email }}</a></li>             
+        </ul>
+    </header>
+    <input type="radio" name="Photos" id="check1" checked>   
+    <input type="radio" name="Photos" id="check2">    
+    <input type="radio" name="Photos" id="check3">    
+    <input type="radio" name="Photos" id="check4">
+    <input type="radio" name="Photos" id="check5">
+    <input type="radio" name="Photos" id="check6">
+
+    <div class="container">
+        <h1>AfroshopKE Products</h1>
+        <div class="top-content">
+            <h3>Products Gallery</h3>
+            <label for="check1">All Products</label>
+            <label for="check2">bracelets </label>
+            <label for="check3">sandals</label>
+            <label for="check4">reed bags</label>
+            <label for="check5">kyondos</label>
+            <label for="check6">leather bags</label>
+        </div>
+
+        <div>
+            <div class="products-gallery">
+                <div class="pic braceletes">
+                    <img src="{{url_for('static', filename='images/bracelet1.jpeg')}}">
+                    <h4>i</h4>
+                </div>
+                <div class="pic sandals">
+                    <img src="{{url_for('static', filename='images/sandals1.jpeg')}}">
+                    <h4>ii</h4>
+                </div>
+                <div class="pic reed">
+                    <img src="{{url_for('static', filename='images/reed1.jpeg')}}">
+                    <h4>iii</h4>
+                </div>
+                <div class="pic kyondos">
+                    <img src="{{url_for('static', filename='images/reed2.jpeg')}}">
+                    <h4>iv</h4>
+                </div>
+                <div class="pic leather">
+                    <img src="{{url_for('static', filename='images/leather1.jpeg')}}">
+                    <h4>v</h4>
+                </div>
+                <div class="pic braceletes">
+                    <img src="{{url_for('static', filename='images/bracelet2.jpeg')}}">
+                    <h4>vi</h4>
+                </div>
+                <div class="pic sandals">
+                    <img src="{{url_for('static', filename='images/sandals2.jpeg')}}">
+                    <h4>vii</h4>
+                </div>
+                <div class="pic reed">
+                    <img src="{{url_for('static', filename='images/reed2.jpeg')}}">
+                    <h4>viii</h4>
+                </div>
+                <div class="pic kyondos">
+                    <img src="{{url_for('static', filename='images/kyondo2.jpeg')}}">
+                    <h4>ix</h4>
+                </div>
+                <div class="pic leather">
+                    <img src="{{url_for('static', filename='images/leather2.jpeg')}}">
+                    <h4>x</h4>
+                </div>
+                <div class="pic braceletes">
+                    <img src="{{url_for('static', filename='images/bracelet3.jpeg')}}">
+                    <h4>xi</h4>
+                </div>
+                <div class="pic sandals">
+                    <img src="{{url_for('static', filename='images/sandals3.jpeg')}}">
+                    <h4>xii</h4>
+                </div>
+                <div class="pic reed">
+                    <img src="{{url_for('static', filename='images/reed3.jpeg')}}">
+                    <h4>xiii</h4>
+                </div>
+                <div class="pic kyondos">
+                    <img src="{{url_for('static', filename='images/kyondo3.jpeg')}}">
+                    <h4>xiv</h4>
+                </div>
+                <div class="pic leather">
+                    <img src="{{url_for('static', filename='images/leather4.jpeg')}}">
+                    <h4>xv</h4>
+                </div>
+                <div class="pic braceletes">
+                    <img src="{{url_for('static', filename='images/bracelet4.jpeg')}}">
+                    <h4>xvi</h4>
+                </div>
+                <div class="pic sandals">
+                    <img src="{{url_for('static', filename='images/sandals4.jpeg')}}">
+                    <h4>xvii</h4>
+                </div>
+                <div class="pic reed">
+                    <img src="{{url_for('static', filename='images/reed4.jpeg')}}">
+                    <h4>xviii</h4>
+                </div>
+                <div class="pic kyondos">
+                    <img src="{{url_for('static', filename='images/kyondo4.jpeg')}}">
+                    <h4>xix</h4>
+                </div>
+                <div class="pic leather">
+                    <img src="{{url_for('static', filename='images/leather5.jpeg')}}">
+                    <h4>xx</h4>
+                </div>
+                <div class="pic braceletes">
+                    <img src="{{url_for('static', filename='images/bracelet5.jpeg')}}">
+                    <h4>xxi</h4>
+                </div>
+                <div class="pic sandals">
+                    <img src="{{url_for('static', filename='images/sandals5.jpeg')}}">
+                    <h4>xxii</h4>
+                </div>
+                <div class="pic reed">
+                    <img src="{{url_for('static', filename='images/reed5.jpeg')}}">
+                    <h4>xxiii</h4>
+                </div>
+                <div class="pic kyondos">
+                    <img src="{{url_for('static', filename='images/kyondo5.jpeg')}}">
+                    <h4>xxiv</h4>
+                </div>
+                <div class="pic leather">
+                    <img src="{{url_for('static', filename='images/leather6.jpeg')}}">
+                    <h4>xxv</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
