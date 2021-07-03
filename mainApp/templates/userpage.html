@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'userpage.css' %}">
+    <title>User Page</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/">Purchase</a></li>
+            <li><a href="/">Make Order</a></li> 
+            <li><a href="{% url 'home' %}">Logout </a></li> 
+            <li><a href="#">username</a></li>
+            <li><a href="#">Email</a></li>             
+        </ul>
+    </header>
+    <input type="radio" name="Photos" id="check1" checked>   
+    <input type="radio" name="Photos" id="check2">    
+    <input type="radio" name="Photos" id="check3">    
+    <input type="radio" name="Photos" id="check4">
+    <input type="radio" name="Photos" id="check5">
+    <input type="radio" name="Photos" id="check6">
+
+    <div class="container">
+        <h1>AfroshopKE Products</h1>
+        <div class="top-content">
+            <h3>Products Gallery</h3>
+            <label for="check1">All Products</label>
+            <label for="check2">bracelets </label>
+            <label for="check3">sandals</label>
+            <label for="check4">reed bags</label>
+            <label for="check5">kyondos</label>
+            <label for="check6">leather bags</label>
+        </div>
+
+        <div>
+            <div class="products-gallery">
+                <div class="pic  braceletes">
+                    <img src="{% static 'images/bracelet1.jpeg' %}">
+                    <p>
+                        <h4> Bracelet </h4>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

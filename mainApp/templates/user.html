@@ -1,7 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='user.css')}}">
+    <link rel="stylesheet" type="text/css" href="{% static 'user.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
@@ -26,14 +28,13 @@
         <div class="background">
             <div class="text">
                 <h1>Login</h1>
-                <p>First Time? <a href="{{ url_for('register') }}">Register</a></p>
+                <p>First Time? <a href="{% url 'register' %}">Register</a></p>
 
             </div>
             <div class="box">
-                <form action="{{ url_for('userpage') }}" method="POST" class="form">
+                <form action="{% url 'userpage' %}" method="POST" class="form">
+                {% csrf_token %}
                     <input type="text" name="username" class="username" placeholder="username" required>
-                    <input type="text" name="phone" class="Phone" placeholder="Phone number" required>
-                    <input type="text" name="email" class="email" placeholder="example@abc.com" required>
                     <input type="text" name="password" class="password" placeholder="password" required>
                     <input type="submit" class="button" value="Login">
                 </form>

@@ -1,7 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='register.css')}}">
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
@@ -26,13 +28,14 @@
         <div class="background">
             <div class="text">
                 <h1>Register</h1>
-                <p>Already have an account? <a href="{{ url_for('user') }}">Login</a></p>
+                <p>Already have an account? <a href="{% url 'user' %}">Login</a></p>
 
             </div>
             <div class="box">
-                <form action="{{ url_for('register') }}" class="form" method="POST">
-                    <input type="text" name="Fullname" class="Fullname" placeholder="Fullname" required>
-                    <input type="text" name="Phone" class="Phone" placeholder="Phone number" required>
+                <form action="{% url 'register' %}" class="form" method="POST">
+                @{% csrf_token %}
+                    <input type="text" name="firstname" class="Fullname" placeholder="First Name" required>
+                    <input type="text" name="fastname" class="Fullname" placeholder="Last Name" required>
                     <input type="text" name="username" class="username" placeholder="username" required>
                     <input type="text" name="email" class="email" placeholder="example@abc.com" required>
                     <input type="text" name="password" class="password" placeholder="password" required>

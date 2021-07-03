@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
 from django.views.generic import TemplateView
 
@@ -25,6 +24,11 @@ urlpatterns = [
     path('jambo', TemplateView.as_view(template_name="What'sup.html"), name="jambo"),
     path('about', TemplateView.as_view(template_name="aboutus.html"), name="about"),
     path('contact', TemplateView.as_view(template_name="contactus.html"), name="contact"),
-    path('login', TemplateView.as_view(template_name="homepage.html"), name="user")
+    
+    
+    path('login', TemplateView.as_view(template_name="user.html"), name="user"),
+    path('register', TemplateView.as_view(template_name="register.html"), name="register"),
+    
+    path('mainPage', TemplateView.as_view(template_name="userpage.html"), name="userpage"),
     
 ] 

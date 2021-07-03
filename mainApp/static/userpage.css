@@ -42,7 +42,7 @@ h1::before {
   position: absolute;
   width: 100px;
   height: 3px;
-  background-color: skyblue;
+  /* background-color: skyblue; */
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
@@ -60,7 +60,7 @@ h1::before {
   }
 }
 .top-content {
-  background-color: skyblue;
+  /* background-color: skyblue; */
   width: 90%;
   margin: 0 auto 20px;
   height: 60px;
@@ -100,7 +100,6 @@ label:hover {
 .pic {
   position: relative;
   height: 350px;
-  box-shadow: 3px 3px 5px skyblue;
   cursor: pointer;
 }
 .pic img {
