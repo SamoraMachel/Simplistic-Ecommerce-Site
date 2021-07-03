@@ -26,15 +26,13 @@ class Product(models.Model):
         return self.name
 
 
-class Customer(models.Model):
-    user = models.ForeignKey(User, on_delete=models.deletion.CASCADE)
-    basket = models.ManyToManyField(Product)
-    card  = models.CharField(max_length=20, null=True, blank=True)
     
     
-class Purchases(models.Model):
+class Purchase(models.Model):
     user = models.ForeignKey(User, on_delete=models.deletion.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.deletion.DO_NOTHING)
     quantity = models.IntegerField(null=False, blank=False)
+    bought = models.BooleanField()
+    
     
     
