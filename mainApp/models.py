@@ -11,6 +11,7 @@ class ProductType(models.Model):
         return self.type
 
 class Product(models.Model):
+    image = models.ImageField(upload_to="productImages/")
     name = models.CharField(max_length=20, null=False, blank=False)
     code = models.CharField(max_length=10, null=False, blank=False)
     price = models.IntegerField(null=False, blank=False)

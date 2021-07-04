@@ -39,12 +39,16 @@
 
         <div>
             <div class="products-gallery">
-                <div class="pic  braceletes">
-                    <img src="{% static 'images/bracelet1.jpeg' %}">
+            {% for product in products %}
+                 <div class="pic  braceletes">
+                    <img src="{{ product.image.url }}">
                     <p>
-                        <h4> Bracelet </h4>
+                         <h4>   {{ product.name }} <br/>
+                                Ksh. {{ product.price }}
+                        </h4>
                     </p>
                 </div>
+            {% endfor %}
             </div>
 
         </div>

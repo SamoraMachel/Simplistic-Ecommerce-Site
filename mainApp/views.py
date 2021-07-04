@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import  authenticate, login
 
 from .forms import LoginForm, RegistrationForm
+from .models import Product
 
 # Create your views 
 
@@ -45,9 +46,14 @@ def register_user(request):
     return render(request, 'register.html', {'form': form})
 
 def render_mainpage(request):
+    
+    queryset = Product.objects.all()
+    
     if request.user.is_authenticated:
         username = request.user.username
         email = request.user.email
-        return render(request, 'userpage.html', {'username': username, 'email':email})
+        
+        
+        return render(request, 'userpage.html', {'username': username, 'email':email, "products":queryset})
     return HttpResponseRedirect("/login")
     

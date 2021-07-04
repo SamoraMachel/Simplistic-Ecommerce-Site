@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from mainApp.views import MainPage, login_user, register_user, render_mainpage
 
@@ -34,3 +36,7 @@ urlpatterns = [
     path('basktet', TemplateView.as_view(template_name="sales.html"), name="basket")
     
 ] 
+
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
