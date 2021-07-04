@@ -5,3 +5,4 @@ from .models import Product, ProductType, Purchase
 admin.site.register(Product)
 admin.site.register(ProductType)
 admin.site.register(Purchase)
+

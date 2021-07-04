@@ -32,14 +32,24 @@
 
             </div>
             <div class="box">
-                <form action="{% url 'register' %}" class="form" method="POST">
-                @{% csrf_token %}
-                    <input type="text" name="firstname" class="Fullname" placeholder="First Name" required>
+                <form action="{% url 'register' %}" class="" method="POST">
+                {% csrf_token %}
+                    {{ form.as_p }}
+                    {% comment %} <input type="text" name="firstname" class="Fullname" placeholder="First Name" required>
                     <input type="text" name="fastname" class="Fullname" placeholder="Last Name" required>
                     <input type="text" name="username" class="username" placeholder="username" required>
                     <input type="text" name="email" class="email" placeholder="example@abc.com" required>
-                    <input type="text" name="password" class="password" placeholder="password" required>
-                    <input type="submit" class="button" value="Login">
+                    <input type="text" name="password" class="password" placeholder="password" required> {% endcomment %}
+                    
+                    <input type="submit" class="button" value="Register">
+
+                    {% if form.errors %}
+                        <ol>
+                            {% for error in form.errors %}
+                                <ul><strong> {{ error| escape }}</strong></ul>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
                 </form>
 
             </div>

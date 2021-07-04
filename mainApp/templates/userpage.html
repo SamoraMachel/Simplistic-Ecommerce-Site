@@ -12,11 +12,10 @@
 <body>
     <header>
         <ul>
-            <li><a href="/">Purchase</a></li>
-            <li><a href="/">Make Order</a></li> 
-            <li><a href="{% url 'home' %}">Logout </a></li> 
-            <li><a href="#">username</a></li>
-            <li><a href="#">Email</a></li>             
+            <li><a href="{% url 'basket' %}">Purchase</a></li>
+            <li><a href="{% url 'logout' %}">Logout </a></li> 
+            <li><a href="#">{{ username }}</a></li>
+            <li><a href="#">{{ email }}</a></li>             
         </ul>
     </header>
     <input type="radio" name="Photos" id="check1" checked>   

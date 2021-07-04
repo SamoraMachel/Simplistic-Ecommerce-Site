@@ -32,11 +32,20 @@
 
             </div>
             <div class="box">
-                <form action="{% url 'userpage' %}" method="POST" class="form">
+                <form method="POST" class="">
                 {% csrf_token %}
-                    <input type="text" name="username" class="username" placeholder="username" required>
-                    <input type="text" name="password" class="password" placeholder="password" required>
+                    {{ form.as_table }}
+                    {% comment %} <input type="text" name="username" class="username" placeholder="username" required>
+                    <input type="text" name="password" class="password" placeholder="password" required> {% endcomment %}
                     <input type="submit" class="button" value="Login">
+
+                    {% if form.errors %}
+                        <ol>
+                            {% for error in form.errors %}
+                                <li><strong>{{ error| escape }}</strong></li>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
                 </form>
 
             </div>
