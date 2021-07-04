@@ -78,7 +78,7 @@ def get_specific_item(request):
 def purchase_item(request):
     if request.method == "POST":
         productID = request.POST['productID']
-        product = Product.objects.get(id=productID)
+        product = Product.objects.get(id=int(productID))
         Purchase.create(request.user, product, 1)
         
     return redirect('userpage')
