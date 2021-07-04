@@ -24,3 +24,6 @@ class LoginForm(forms.Form):
     username = forms.CharField(label="Username", max_length=20)
     password = forms.CharField(label="Password", max_length=20, widget=forms.PasswordInput,required=True)
     
+class ProductType(forms.Form):
+    productType = forms.CharField(max_length=20)
+    

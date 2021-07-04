@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
-from mainApp.views import MainPage, login_user, register_user, render_mainpage
+from mainApp.views import MainPage, login_user, register_user, render_mainpage, get_specific_item, purchase_item, sales, finish_shopping
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,9 +33,13 @@ urlpatterns = [
     path('register', register_user, name="register"),
     
     path('mainPage', render_mainpage, name="userpage"),
-    path('basktet', TemplateView.as_view(template_name="sales.html"), name="basket")
+    path('mainPage:filtered', get_specific_item, name="filterProducts"),
+    path('basktet', sales, name="basket"),
     
-] 
+    path('addToCart', purchase_item, name="addToCart"),
+    path('finish', finish_shopping, name="finish_shopping")
+    
+]
 
 if settings.DEBUG:
         urlpatterns += static(settings.MEDIA_URL,

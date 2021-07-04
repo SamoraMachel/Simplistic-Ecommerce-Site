@@ -7,34 +7,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'userpage.css' %}">
+    
     <title>User Page</title>
 </head>
 <body>
     <header>
         <ul>
-            <li><a href="{% url 'basket' %}">Purchase</a></li>
+            <li><a href="{% url 'basket' %}">Cart</a></li>
             <li><a href="{% url 'logout' %}">Logout </a></li> 
             <li><a href="#">{{ username }}</a></li>
             <li><a href="#">{{ email }}</a></li>             
         </ul>
     </header>
-    <input type="radio" name="Photos" id="check1" checked>   
-    <input type="radio" name="Photos" id="check2">    
-    <input type="radio" name="Photos" id="check3">    
-    <input type="radio" name="Photos" id="check4">
-    <input type="radio" name="Photos" id="check5">
-    <input type="radio" name="Photos" id="check6">
 
     <div class="container">
         <h1>AfroshopKE Products</h1>
         <div class="top-content">
-            <h3>Products Gallery</h3>
-            <label for="check1">All Products</label>
-            <label for="check2">bracelets </label>
-            <label for="check3">sandals</label>
-            <label for="check4">reed bags</label>
-            <label for="check5">kyondos</label>
-            <label for="check6">leather bags</label>
+            {% comment %} All Products Section {% endcomment %}
+            <h3>
+                <form> {% csrf_token %}
+                    Product Gallery
+                </form>
+            </h3>
+
+            {% comment %} All Products Section {% endcomment %}
+            <div> 
+                <form action="{% url 'filterProducts' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text" name="productType" value="all"/>
+                    <label for="all">All Products </label>
+                    <button id="all" type="submit" />
+                </form>
+            </div>
+
+            {% comment %} Bracelets Section {% endcomment %}
+            <div> 
+                <form action="{% url 'filterProducts' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text" name="productType" value="Bracelets"/>
+                    <label for="Bracelet">Bracelets </label>
+                    <button id="Bracelet" type="submit" />
+                </form>
+            </div>
+
+            {% comment %} Sandals section {% endcomment %}
+            <div>
+                <form action="{% url 'filterProducts' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text" name="productType" value="Sandals"/>
+                    <label for="Sandals">Sandals </label>
+                    <button id="Sandals" type="submit" />
+                </form>
+            </div>
+
+            {% comment %} Reed Bags Section {% endcomment %}
+            <div>
+                <form action="{% url 'filterProducts' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text" name="productType" value="Reed Bags"/>
+                    <label for="reed_bags">Reed Bags </label>
+                    <button id="reed_bags" type="submit" />
+                </form>
+            </div>
+
+            {% comment %} Kyondos Section {% endcomment %}
+            <div>
+                <form action="{% url 'filterProducts' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text" name="productType" value="Kyondos"/>
+                    <label for="Kyondos">Kyondos </label>
+                    <button id="Kyondos" type="submit" />
+                </form>
+            </div>
+
+            {% comment %} Leather Bags Section{% endcomment %}
+            <div>
+                <form action="{% url 'filterProducts' %}" method="POST">
+                {% csrf_token %}
+                    <input type="text" name="productType" value="Leather Bags"/>
+                    <label for="leather_bag">Leather Bags </label>
+                    <button id="leather_bag" type="submit" />
+                </form>
+            </div>
         </div>
 
         <div>
@@ -44,7 +98,13 @@
                     <img src="{{ product.image.url }}">
                     <p>
                          <h4>   {{ product.name }} <br/>
-                                Ksh. {{ product.price }}
+                                Ksh. {{ product.price }} </br>
+                                <form action="addToCart" method="POST" > 
+                                {% csrf_token %}
+                                    <input type="number" name="productID" value=product.id hidden/>
+                                    <label for="purchase">Add To Cart</label>
+                                    <input id="purchase" type="submit"/>
+                                </form>
                         </h4>
                     </p>
                 </div>
@@ -54,4 +114,10 @@
         </div>
     </div>
 </body>
+<script>
+    document.querySelector('form').addEventListener('click',function(e){
+        e.preventDefault();
+    },false);
+</script>
+
 </html>
