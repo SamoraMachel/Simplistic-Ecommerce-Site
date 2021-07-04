@@ -78,8 +78,9 @@ def get_specific_item(request):
 def purchase_item(request):
     if request.method == "POST":
         productID = request.POST['productID']
-        product = Product.objects.get(id=1)
-        Purchase.create(request.user, product, 1)
+        return HttpResponse(productID)
+        # product = Product.objects.get(id=1)
+        # Purchase.create(request.user, product, 1)
         
     return redirect('userpage')
 

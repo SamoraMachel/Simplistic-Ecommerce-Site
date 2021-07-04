@@ -101,7 +101,7 @@
                                 Ksh. {{ product.price }} </br>
                                 <form action="addToCart" method="POST" > 
                                 {% csrf_token %}
-                                    <input type="number" name="productID" value=product.id hidden/>
+                                    <input type="number" name="productID" value={{product.id}} hidden/>
                                     <label for="purchase">Add To Cart</label>
                                     <input id="purchase" type="submit"/>
                                 </form>
