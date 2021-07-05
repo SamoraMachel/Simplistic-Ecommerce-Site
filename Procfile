@@ -1,1 +1,1 @@
-web: python manage.py runserver localhost:8081
+web: gunicorn gettingstarted.wsgi
